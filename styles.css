@@ -202,6 +202,7 @@ button:hover {
     padding: 10px;
     margin-left: 20px; 
     max-width: 300px;
+    max-height: 400px;
     background-color: #f8f9fa;
     color: #282828;
     text-align: center;
