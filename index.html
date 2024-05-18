@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <title>Flutted Glass Generator</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+
+        <h1 class="title">TransluTint</h1>
+
+        <form class="file-upload-form">
+            <label for="file" class="file-upload-label">
+                <div class="file-upload-design">
+                    <svg viewBox="0 0 640 512" height="1em">
+                        <path
+                            d="M144 480C64.5 480 0 415.5 0 336c0-62.8 40.2-116.2 96.2-135.9c-.1-2.7-.2-5.4-.2-8.1c0-88.4 71.6-160 160-160c59.3 0 111 32.2 138.7 80.2C409.9 102 428.3 96 448 96c53 0 96 43 96 96c0 12.2-2.3 23.8-6.4 34.6C596 238.4 640 290.1 640 352c0 70.7-57.3 128-128 128H144zm79-217c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l39-39V392c0 13.3 10.7 24 24 24s24-10.7 24-24V257.9l39 39c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0l-80 80z">
+                        </path>
+                    </svg>
+                    <p>Drag and Drop</p>
+                    <p>or</p>
+                    <span class="browse-button">Browse files</span>
+                </div>
+                <input id="file" type="file" />
+            </label>
+        </form>
+        <div id="uploadNotice" class="notice-box">
+            Why does this not support downloading? Because it's too much work to
+            implement, and this was a fun little project I made in an hour.
+            <br>
+            <br>
+            How does it work? Simply upload an image, use the inputs, and adjust it to your heart's desire. Want the
+            image? Take a screenshot.
+            <br>
+            <br>
+            Do I plan to add anything else? Most likely not, but we'll see.
+            <br>
+            <br>
+            Can I trust you won't steal my files? Inspect the codebase, it's right there, just don't steal my code lmao
+            <br>
+            <br>
+            Does it support heic's? Nope, PNGS, JPEG, JPG etc
+        </div>
+
+        <div id="imageContainer">
+            <div id="effectOverlay"></div>
+        </div>
+
+        <div class="customization hidden">
+            <div>
+                <label for="blurAmount">Blur Amount:</label>
+                <input type="range" id="blurAmount" min="0" max="20" value="5">
+            </div>
+            <div>
+                <label for="brightnessAmount">Brightness Amount:</label>
+                <input type="range" id="brightnessAmount" min="0" max="2" step="0.1" value="0.7">
+            </div>
+            <div>
+                <label for="lineWidth">Line Width:</label>
+                <input type="range" id="lineWidth" min="1" max="10" value="1">
+            </div>
+            <div>
+                <label for="lineSpacing">Line Spacing:</label>
+                <input type="range" id="lineSpacing" min="1" max="20" value="2">
+            </div>
+            <div>
+                <label for="glassOpacity">Glass Opacity:</label>
+                <input type="range" id="glassOpacity" min="0" max="1" step="0.1" value="0.1">
+            </div>
+            <div>
+                <label for="imageScale">Image Scale:</label>
+                <input type="range" id="imageScale" min="0.5" max="2" step="0.1" value="1">
+            </div>
+            <button onclick="resetDefaults()">Defaults</button>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+
+</html>
