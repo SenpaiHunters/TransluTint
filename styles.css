@@ -2,7 +2,6 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background: #282828;
     color: #f0f0f0;
     text-align: center;
     padding: 10px 0;
@@ -203,7 +202,7 @@ button:hover {
     margin-left: 20px; 
     max-width: 300px;
     max-height: 400px;
-    background-color: #f8f9fa;
+    background-color: #cfcfcf;
     color: #282828;
     text-align: center;
     border-radius: 5px;
@@ -213,4 +212,48 @@ button:hover {
     text-overflow: ellipsis;
     white-space: normal; 
     overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 20px;
+        padding: 8px 0;
+    }
+
+    .customization, .file-upload-form, #imageContainer {
+        flex-direction: column;
+    }
+
+    .file-upload-label, .customization {
+        padding: 15px;
+    }
+
+    .file-upload-design, .customization div {
+        flex-direction: column;
+    }
+
+    .notice-box {
+        padding: 5px;
+        margin: 10px;
+        max-width: 90%;
+    }
+
+    #imageContainer img {
+        max-width: 100%;
+        max-height: 50vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 18px;
+    }
+
+    button, .browse-button {
+        width: 100%;
+    }
+
+    input[type="range"], select {
+        width: 100%;
+    }
 }
