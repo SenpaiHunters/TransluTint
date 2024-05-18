@@ -81,28 +81,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     elements.imageInput.addEventListener('change', handleFileSelect);
-
     document.querySelector('button').addEventListener('click', resetDefaults);
 
     const fileUploadForm = document.querySelector('.file-upload-form');
     const dragText = document.querySelector('.file-upload-design span');
 
+    const updateDragState = (isDragging) => {
+        fileUploadForm.classList.toggle('drag-over', isDragging);
+        dragText.textContent = isDragging ? "Let go and we'll take it from here" : "Browse files";
+    };
+
     fileUploadForm.addEventListener('dragover', (event) => {
         event.preventDefault();
-        fileUploadForm.classList.add('drag-over');
-        dragText.textContent = "Let go and we'll take it from here";
+        updateDragState(true);
     });
 
     fileUploadForm.addEventListener('dragleave', (event) => {
         event.preventDefault();
-        fileUploadForm.classList.remove('drag-over');
-        dragText.textContent = "Browse files";
+        updateDragState(false);
     });
 
     fileUploadForm.addEventListener('drop', (event) => {
         event.preventDefault();
-        fileUploadForm.classList.remove('drag-over');
-        dragText.textContent = "Browse files";
+        updateDragState(false);
         handleFileSelect({ target: { files: event.dataTransfer.files } });
     });
 });
